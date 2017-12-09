@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 02, 2017 at 11:21 PM
+-- Generation Time: Dec 09, 2017 at 08:11 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -34,15 +34,19 @@ CREATE TABLE `booking` (
   `MID` int(11) NOT NULL,
   `Bdate` date NOT NULL,
   `Tstart` time NOT NULL,
-  `Tend` time NOT NULL
+  `Tend` time NOT NULL,
+  `Bprice` int(11) NOT NULL,
+  `Bstatus` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`BID`, `FID`, `MID`, `Bdate`, `Tstart`, `Tend`) VALUES
-(101, 201, 101, '2017-12-04', '16:30:00', '17:30:00');
+INSERT INTO `booking` (`BID`, `FID`, `MID`, `Bdate`, `Tstart`, `Tend`, `Bprice`, `Bstatus`) VALUES
+(101, 201, 101, '2017-12-04', '16:30:01', '17:30:00', 160, 'Waiting for payment'),
+(106, 201, 101, '2017-12-08', '16:30:01', '18:30:00', 320, 'Waiting for payment'),
+(111, 101, 101, '2017-12-09', '16:30:01', '17:30:00', 100, 'Waiting for payment');
 
 -- --------------------------------------------------------
 
@@ -61,14 +65,14 @@ CREATE TABLE `feild` (
 --
 
 INSERT INTO `feild` (`FID`, `Fname`, `Fprice`) VALUES
-(101, 'Tennis Court 1', 100),
-(102, 'Tennis Court 2', 100),
-(201, 'Badminton Court 1', 160),
-(202, 'Badminton Court 2', 160),
-(203, 'Badminton Court 3', 160),
-(204, 'Badminton Court 4', 160),
-(301, 'Basketball Court', 1200),
-(401, 'Valleball Court', 1200);
+(101, 'Tennis court 1', 100),
+(102, 'Tennis court 2', 100),
+(201, 'Badminton court 1', 160),
+(202, 'Badminton court 2', 160),
+(203, 'Badminton court 3', 160),
+(204, 'Badminton court 4', 160),
+(301, 'Basketball court', 1200),
+(401, 'Volleyball court', 1200);
 
 -- --------------------------------------------------------
 
@@ -88,9 +92,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`MID`, `Mname`, `Mtel`, `Mmail`) VALUES
-(101, 'Piyawat Innurak', '0918236849', 'punkaze.imp@gmail.com'),
-(102, 'Natee Buranapan', '0918236849', 'punkaze.imp@gmail.com'),
-(103, 'Radsiri Chanawan', '0918236849', 'punkaze.imp@gmail.com');
+(101, 'Piyawat Innurak', '0918236849', 'punkaze.imp@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -122,7 +124,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `feild`
@@ -134,7 +136,7 @@ ALTER TABLE `feild`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `MID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `MID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -61,8 +61,8 @@
                                         echo '<td>'.$row['Bdate'].'</td>';
                                         echo '<td>'.$correct.'</td>';
                                         echo '<td>'.$row['Tend'].'</td>';
-                                        echo '<td>1000000$</td>';
-                                        echo '<td>ยังไม่จ่าย</td>';
+                                        echo '<td>'.$row['Bprice'].' บาท</td>';
+                                        echo '<td>'.$row['Bstatus'].'</td>';
                                         echo '</tr>';
                                     }
                                 echo '</table>';

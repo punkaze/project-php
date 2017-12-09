@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td id="text">วันที่ :</td>
-                <td><input type="date" name="date" id="date"></td>
+                <td><input type="date" name="date" id="date" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"></td>
             </tr>
             <tr>
                 <td></td>

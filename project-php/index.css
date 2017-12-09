@@ -1,10 +1,11 @@
 body{
-    background-color: rgb(255, 254, 197);
+    /* background-color: rgb(255, 254, 197); */
+    background-color: rgb(116, 116, 116);
 }
 
 table{
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding: 15px;
     border-style: solid;
     border-width: medium;
@@ -21,23 +22,26 @@ td{
 
 #text{
     text-align: right;
-    font-family: fantasy;
 }
 h1{
-    margin-top: 6rem;
-    font-family: fantasy;
-    text-align: center;
-    
-}
-#t1{
-    margin: auto;
-    margin-top: 3rem;
-    padding: 15px;
-    border-style: solid;
-    border-width: medium;
-    border-color: rgb(117, 160, 253);
-    background-color: rgb(22, 88, 187);
-    box-shadow: 3px 3px 10px #49494977;
-    border-radius: 10px;
     color: white;
+    margin-top: 4rem;
+    text-align: center;
+}
+#topic{
+    color: white;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+#warning{
+    color: red;
+    text-align: center;
+    margin: auto;
+}
+
+#tHead{
+    background-color: rgb(252, 252, 157);
+    color: black;
+    text-align: center;
 }

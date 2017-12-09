@@ -14,55 +14,66 @@
     <?php
         $connect = mysqli_connect("localhost","root","","sport");
         //  หา member id จาก database
-            $sql = 'select MID from member where Mname like "%'.$_POST['sName'].'%"';
+            $sql = 'select MID, Mname from member where Mname like "%'.$_POST['sName'].'%"';
             $result = mysqli_query($connect,$sql);
+            $row = mysqli_fetch_array($result);
+            $numrows = mysqli_num_rows($result);
             if (!$result) {
                 echo mysqli_error().'<br>';
                 die('Can not access database!');
             } else {
-                while ($row = mysqli_fetch_array($result)) {
+                if ($numrows > 0) {
+                    echo '<h2 id="topic">Booking detail of '.$row['Mname'].'</h2>';
                     $mID = $row['MID'];
-                }
-            }
-        //  โชว์ข้อมูลการจองของ member เป็น ตาราง
-            $sql = 'select * from booking where MID='.$mID.' ORDER BY FID ASC';
-            $result = mysqli_query($connect,$sql);
-            if (!$result) {
-                echo mysqli_error().'<br>';
-                die('Can not access database!');
-            } else {
-                echo '<table border="1" cellpading="0" cellspacing="0"><tr>';
-                echo '<td>สนาม</td>';
-                echo '<td>วันที่จอง</td>';
-                echo '<td>เวลาเริ่ม</td>';
-                echo '<td>เวลาเสร็จ</td>';
-                echo '<td>ราคาที่ต้องจ่าย</td>';
-                echo '<td>สถานะ</td>';
-                echo '</tr>';
-                    while ($row = mysqli_fetch_array($result)) {
-                        switch ($row['FID']) {
-                            case '101': $fName = 'Tennis court 1'; break;
-                            case '102': $fName = 'Tennis court 2'; break;
-                            case '201': $fName = 'Badminton court 1'; break;
-                            case '202': $fName = 'Badminton court 2'; break;
-                            case '203': $fName = 'Badminton court 3'; break;
-                            case '204': $fName = 'Badminton court 4'; break;
-                            case '301': $fName = 'Basketball court'; break;
-                            case '401': $fName = 'Volleyball court'; break;
-                            default: $fName = 'Do not match Fname'; break;
+
+                    //  โชว์ข้อมูลการจองของ member เป็น ตาราง
+                        $sql = 'select * from booking where MID='.$mID.' ORDER BY FID ASC';
+                        $result = mysqli_query($connect,$sql);
+                        $numrows = mysqli_num_rows($result);
+                        if (!$result) {
+                            echo mysqli_error().'<br>';
+                            die('Can not access database!');
+                        } else {
+                            if ($numrows > 0) {
+                                echo '<table border="1" cellpading="0" cellspacing="0"><tr id="tHead">';
+                                echo '<td>สนาม</td>';
+                                echo '<td>วันที่จอง</td>';
+                                echo '<td>เวลาเริ่ม</td>';
+                                echo '<td>เวลาเสร็จ</td>';
+                                echo '<td>ราคาที่ต้องจ่าย</td>';
+                                echo '<td>สถานะ</td>';
+                                echo '</tr>';
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        switch ($row['FID']) {
+                                            case '101': $fName = 'Tennis court 1'; break;
+                                            case '102': $fName = 'Tennis court 2'; break;
+                                            case '201': $fName = 'Badminton court 1'; break;
+                                            case '202': $fName = 'Badminton court 2'; break;
+                                            case '203': $fName = 'Badminton court 3'; break;
+                                            case '204': $fName = 'Badminton court 4'; break;
+                                            case '301': $fName = 'Basketball court'; break;
+                                            case '401': $fName = 'Volleyball court'; break;
+                                            default: $fName = 'Do not match Fname'; break;
+                                        }
+                                        $correct = strtotime($row['Tstart'])-1;
+                                        echo '<tr>';
+                                        echo '<td>'.$fName.'</td>';
+                                        echo '<td>'.$row['Bdate'].'</td>';
+                                        echo '<td>'.$correct.'</td>';
+                                        echo '<td>'.$row['Tend'].'</td>';
+                                        echo '<td>1000000$</td>';
+                                        echo '<td>ยังไม่จ่าย</td>';
+                                        echo '</tr>';
+                                    }
+                                echo '</table>';
+                            } else {
+                                echo '<table><tr><td>ไม่มีข้อมูลการจองของคุณ</td></tr></table>';
+                            }
+                            mysqli_close($connect);
                         }
-                        $correct = strtotime($row['Tstart'])-1;
-                        echo '<tr>';
-                        echo '<td>'.$fName.'</td>';
-                        echo '<td>'.$row['Bdate'].'</td>';
-                        echo '<td>'.$correct.'</td>';
-                        echo '<td>'.$row['Tend'].'</td>';
-                        echo '<td>1000000$</td>';
-                        echo '<td>ยังไม่จ่าย</td>';
-                        echo '</tr>';
-                    }
-                echo '</table>';
-                mysqli_close($connect);
+                } else {
+                    echo '<h1 id="warning">เราไม่มีข้อมูลการจองของคุณ</h1>';
+                }
             }
     ?>
         

@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
     <form action="selecttime.php" method="post">
-       <h1> BOOKING!!</h1>
+       <h1>BOOKING!!</h1>
         <table>
-            
             <tr>
                 <td id="text">สนาม :</td>
                 <td>
@@ -42,21 +42,14 @@
                 <td><input type="submit" value="ยืนยัน"></td>
             </tr>
         </table>
-        </form>
-        <form action="search.php" method="post">
-        <table id="t1">
-        <tr><td>ค้นหาการจอง</td>
-        <td>สมัครสมาชิก</td></tr>
-         <tr><td align="center"><input type="submit" value="ค้นหา"></td>
-        
-
-        
     </form>
-      <form action="register.php" method="post">
-    <td align="center"><input type="submit" value="Register"></td></tr>
-      </form>
-
-</table>
+    <table>
+        <tr><td>ค้นหาการจอง</td><td>สมัครสมาชิก</td></tr>
+        <tr>
+            <td align="center"><form action="search.php" method="post"><input type="submit" value="ค้นหา"></form></td>
+            <td align="center"><form action="register.php" method="post"><input type="submit" value="Register"></form></td>
+        </tr>
+    </table>
 
 </body>
 </html>

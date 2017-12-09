@@ -16,5 +16,6 @@
             <tr><td align="center"><input type="submit" value="ค้นหา" name="search1"></td></tr>
         </table>
     </form>
+    <?php include "backtoHome.php"; ?>
 </body>
 </html>

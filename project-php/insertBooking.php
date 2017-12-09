@@ -6,6 +6,6 @@
         echo mysqli_error();
     } else {
         include "selectfeild.php";
-        echo '<h3 id="warning">สมัครสมาชิกเรียบร้อย</h3>';
+        echo '<h3 id="warning">ทำการจองเสร็จสิ้น ขอบคุณที่ใช้บริการกับเรา...</h3>';
     }
 ?>

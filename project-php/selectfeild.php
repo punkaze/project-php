@@ -50,6 +50,7 @@
             <td align="center"><form action="register.php" method="post"><input type="submit" value="Register"></form></td>
         </tr>
     </table>
+    <br>
 
 </body>
 </html>

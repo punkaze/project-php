@@ -67,5 +67,6 @@
             echo '<input type="hidden" name="date" value="'.$_POST['date'].'">';
         ?>
     </form>
+    <?php include "backtoHome.php"; ?>
 </body>
 </html>

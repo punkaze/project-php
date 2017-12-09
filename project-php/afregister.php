@@ -1,44 +1,38 @@
-<html>
-<link rel="stylesheet" href="index.css">
-</html>
-<?php
-$connect = mysqli_connect("localhost","root","","sport");
-$sql = 'INSERT INTO member VALUES(null,"'.$_POST['Mname'].'","'.$_POST['Mtel'].'","'.$_POST['Mmail'].'")';
-$result = mysqli_query($connect,$sql);
-if (!$result) {
-    echo mysqli_error();
-} else {
-    echo 'Register Compelete';
-    
-    mysqli_close($connect);
-
-}
-
-/*$sql = 'select * from student';
-$result = mysqli_query($connect,$sql);
-if (!$result) {
-    echo mysqli_error().'<br>';
-    die('Can not access database!');
-} else {
-     echo'<"finish">';
-    /*echo '<table border="1" cellpading="0" cellspacing="0"><tr>';
-    echo '<td>Student ID</td>';
-    echo '<td>Firstname</td>';
-    echo '<td>Lastname</td>';
-    echo '<td>Address</td>';
-    echo '<td>TeacherID</td>';
-    echo '</tr>';
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo '<tr>';
-        while (list($key,$value)=each($row)) {
-            if ($value=='') {
-                echo '<td>&nbsp</td>';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sport Complex Web Booking</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <?php
+        $connect = mysqli_connect("localhost","root","","sport");
+        $sql = 'select * from member where Mname like "'.$_POST['Mname'].'%" and Mtel="'.$_POST['Mtel'].'" and Mmail="'.$_POST['Mmail'].'"';
+        $result = mysqli_query($connect,$sql);
+        $row = mysqli_fetch_array($result);
+        $numrow = mysqli_num_rows($result);
+        if (!$result) {
+            echo mysqli_error();
+            die('Can not access database!');
+        } else {
+            if ($numrow > 0) {
+                echo '<h1>เกิดข้อผิดพลาด!! ข้อมูลที่คุณกรอกมีความซ้ำซ้อน มีความเป็นไปได้ที่คุณจะเป็นสมาชิกอยู่แล้ว</h1>';
             } else {
-                echo '<td>'.$value.'</td>';
+                $sql = 'INSERT INTO member VALUES(null,"'.$_POST['Mname'].'","'.$_POST['Mtel'].'","'.$_POST['Mmail'].'")';
+                $result = mysqli_query($connect,$sql);
+                if (!$result) {
+                    echo mysqli_error();
+                    die('Can not access database!');
+                } else {
+                    include "selectfeild.php";
+                    echo '<h2 id="warning">สมัครสมาชิกเรียบร้อย</h2>';
+                }
             }
         }
-        echo '</tr>';
-    }
-    echo '</table>';*/
-   header("Location:selectfeild.php");
-?>
+    ?>
+</body>
+</html>
+

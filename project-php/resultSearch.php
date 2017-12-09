@@ -66,19 +66,19 @@
                                         echo '</tr>';
                                     }
                                 echo '</table>';
+                                include "backtoHome.php";
                             } else {
-                                echo '<table><tr><td>ไม่มีข้อมูลการจองของคุณ</td></tr></table>';
+                                echo '<table><tr><td>คุณไม่เคยมีประวัติการจอง</td></tr></table>';
+                                include "backtoHome.php";
                             }
                             mysqli_close($connect);
                         }
                 } else {
-                    echo '<h1 id="warning">เราไม่มีข้อมูลการจองของคุณ</h1>';
+                    echo '<h1 id="warning">*เราไม่มีข้อมูลการจองของคุณ</h1>';
+                    include "backtoHome.php";
                 }
             }
     ?>
         
 </body>
-
-
-
 </html>

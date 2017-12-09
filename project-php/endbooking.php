@@ -22,7 +22,6 @@
                 while ($row = mysqli_fetch_array($result)) {
                     $mID = $row['MID'];
                 }
-                echo $mID.'<br>';
                 if(!preg_match('/^[0-9]{10}$/', test_input($_POST['mTel']))) {
                     echo '<table><tr><td><font color="#FF0000"> เบอร์โทรศัพท์ใส่ได้เฉพาะตัวเลข </font></td></tr></table>';
                     include "information.php";
@@ -45,10 +44,12 @@
                         echo '<input type="hidden" name="eTime" value="'.$_POST['eTime'].'">';
                         echo '<input type="hidden" name="price" value="'.$outcome.'">';
                     echo '</form>';
+                    include "backtoHome.php";
                 } 
             } else {
                 echo '<h2 id="warning">คุณไม่ใช่สมาชิก โปรดลงทะเบียนก่อนทำการจอง</h2>';
-                
+                echo '<table><tr><td>สมัครสมาชิก</td></tr><tr><td align="center"><form action="register.php" method="post"><input type="submit" value="Register"></form></td></tr></table>';
+                include "backtoHome.php";
             }
             mysqli_close($connect);
         }

@@ -8,32 +8,23 @@
     <title>Register</title>
 </head>
 <body>
-<form action="afregister.php" method="post">
-       <h1>REGISTER</h1>
-       <table>
-          <tr>
-          
-          <td id="text">Name : </td><td><input type="text" name="Mname" ></td>
-         </tr><tr>
-         
-          <td id="text">Phone : </td><td><input type="text" name="Mtel" ></td>
-             </tr>
+    <h1>REGISTER</h1>
+    <form action="afregister.php" method="post">
+        <table>
             <tr>
-            <td id="text">E-mail :</td><td><input type="text" name="Mmail"></td>
+                <td id="text">Name : </td><td><input type="text" name="Mname"></td>
             </tr>
+            <tr>
+                <td id="text">Phone : </td><td><input type="text" name="Mtel"></td>
+            </tr>
+            <tr>
+                <td id="text">E-mail :</td><td><input type="email" name="Mmail"></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="submit" value="Register"></td> 
+            </tr>
+        </table>
+    </form>
 
-         
-
-
-          <td></td><td><input type="submit" value="Register"></td> 
-          
-       
-       </table>
-
-</form>
-
-          
-        
-       
 </body>
 </html>

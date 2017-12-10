@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Page</title>
-    <link rel="stylesheet" href="../others/index.css">
+    <link rel="stylesheet" href="../others/style.css">
 </head>
 <body>
     <?php

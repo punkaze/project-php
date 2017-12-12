@@ -8,6 +8,7 @@
     <title>Sport Complex Web Booking</title>
 </head>
 <body>
+<?php include "../header.php"; ?>
     <?php
         $outcome = $_POST['price'] * $_POST['hour'];
         $connect = mysqli_connect("localhost","root","","sport");

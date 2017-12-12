@@ -11,6 +11,7 @@
 </head>
 <body>
 <body>
+<?php include "../header.php"; ?>
     <?php
         $connect = mysqli_connect("localhost","root","","sport");
         //  หา member id จาก database

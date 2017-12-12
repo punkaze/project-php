@@ -8,6 +8,7 @@
     <title>Information</title>
 </head>
 <body>
+<?php include "../header.php"; ?>
     <?php
         if (!isset($_POST['sTime'])) {
             echo '<h3 id="warning">*โปรดเลือกเวลาเริ่มเล่นของท่าน</h3>';

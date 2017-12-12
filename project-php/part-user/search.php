@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<?php include "../header.php"; ?>
     <h1>SEARCH BOOKING</h1>
     <form action="resultSearch.php" method="post">    
         <table>

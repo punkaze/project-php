@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../others/style.css">
 </head>
 <body>
-
+    <?php include "../header.php"; ?>
     <form action="selecttime.php" method="post">
        <h1>BOOKING!!</h1>
         <table>

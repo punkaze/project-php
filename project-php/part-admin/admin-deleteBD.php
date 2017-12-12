@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../others/style.css">
 </head>
 <body>
+<?php include "../header.php"; ?>
     <?php
         $connect = mysqli_connect("localhost","root","","sport");
         $sql = 'DELETE FROM booking WHERE BID='.$_POST['bID'];

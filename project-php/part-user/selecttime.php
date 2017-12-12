@@ -23,6 +23,7 @@
             mysqli_close($connect);
         }
     ?>
+    <?php include "../header.php"; ?>
     <form action="information.php" method="post">
         <table>
             <tr>

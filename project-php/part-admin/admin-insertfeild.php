@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../others/style.css">
 </head>
 <body>
+<?php include "../header.php"; ?>
     <?php
       
             echo '<form action="admin-finsertfeild.php" method="post">';

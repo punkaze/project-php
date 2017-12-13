@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2017 at 08:11 PM
+-- Generation Time: Dec 13, 2017 at 01:02 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -46,7 +46,8 @@ CREATE TABLE `booking` (
 INSERT INTO `booking` (`BID`, `FID`, `MID`, `Bdate`, `Tstart`, `Tend`, `Bprice`, `Bstatus`) VALUES
 (101, 201, 101, '2017-12-04', '16:30:01', '17:30:00', 160, 'Waiting for payment'),
 (106, 201, 101, '2017-12-08', '16:30:01', '18:30:00', 320, 'Waiting for payment'),
-(111, 101, 101, '2017-12-09', '16:30:01', '17:30:00', 100, 'Waiting for payment');
+(111, 101, 101, '2017-12-09', '16:30:01', '17:30:00', 100, 'Waiting for payment'),
+(112, 204, 102, '2017-12-10', '17:30:01', '20:30:00', 480, 'Waiting for payment');
 
 -- --------------------------------------------------------
 
@@ -84,15 +85,22 @@ CREATE TABLE `member` (
   `MID` int(11) NOT NULL,
   `Mname` text NOT NULL,
   `Mtel` text NOT NULL,
-  `Mmail` text NOT NULL
+  `Mmail` text NOT NULL,
+  `Mpasswd` text NOT NULL,
+  `Mstatus` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`MID`, `Mname`, `Mtel`, `Mmail`) VALUES
-(101, 'Piyawat Innurak', '0918236849', 'punkaze.imp@gmail.com');
+INSERT INTO `member` (`MID`, `Mname`, `Mtel`, `Mmail`, `Mpasswd`, `Mstatus`) VALUES
+(100, 'admin', '-', 'admin@admin.com', 'admin', 'admin'),
+(101, 'Piyawat Innurak', '0918236849', 'punkaze.imp@gmail.com', 'punkaze', 'user'),
+(102, 'Ja', '0824333013', 'jaeiei@hotmail.com', '', 'user'),
+(103, 'radsiri', '0936081407', 'radsiri9639@gmail.com', '', 'user'),
+(104, 'radsiri chanwan', '0936081407', 'radsiri9639@gmail.com', '', 'user'),
+(105, 'Natee View', '0123456789', 'natee@gmail.com', '123456', 'user');
 
 --
 -- Indexes for dumped tables
@@ -124,7 +132,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `feild`
@@ -136,7 +144,7 @@ ALTER TABLE `feild`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `MID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `MID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

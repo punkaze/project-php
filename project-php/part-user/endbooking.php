@@ -48,8 +48,7 @@
                     include "../others/backtoHome.php";
                 } 
             } else {
-                echo '<h2 id="warning">คุณไม่ใช่สมาชิก โปรดลงทะเบียนก่อนทำการจอง</h2>';
-                echo '<table><tr><td>สมัครสมาชิก</td></tr><tr><td align="center"><form action="register.php" method="post"><input type="submit" value="Register"></form></td></tr></table>';
+                echo '<h2 id="warning">โปรดใส่ชื่อให้ตรงกับที่ท่านสมัครไว้</h2>';
                 include "../others/backtoHome.php";
             }
             mysqli_close($connect);

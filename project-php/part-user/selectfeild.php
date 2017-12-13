@@ -44,10 +44,9 @@
         </table>
     </form>
     <table>
-        <tr><td>ค้นหาการจอง</td><td>สมัครสมาชิก</td></tr>
+        <tr><td>ค้นหาการจอง</td></tr>
         <tr>
             <td align="center"><form action="search.php" method="post"><input type="submit" value="ค้นหา"></form></td>
-            <td align="center"><form action="register.php" method="post"><input type="submit" value="Register"></form></td>
         </tr>
     </table>
     <br>

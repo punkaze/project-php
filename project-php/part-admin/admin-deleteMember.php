@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../others/style.css">
 </head>
 <body>
-<?php include "../header.php"; ?>
     <?php
         $connect = mysqli_connect("localhost","root","","sport");
         $sql = 'DELETE FROM member WHERE MID='.$_POST['mID'];

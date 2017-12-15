@@ -3,7 +3,7 @@
         <?php session_start(); ?>
         <?php if (isset($_SESSION['usr_id'])) { ?>
             Signed in as <?php echo $_SESSION['usr_name']; ?>&nbsp&nbsp
-            <button><a href="../index.php">Logout</a></button>
+            <button><a href="../logout.php">Logout</a></button>
         <?php }?>
     </div>
 </div>
